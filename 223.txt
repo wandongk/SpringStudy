@@ -1,0 +1,19 @@
+1. autocomplete
+-- 검색어 자동완성
+-- jquery-ui library 사용한 기능
+autocomplete({
+    source: [],
+    minlength : 1,
+    delay : 100,
+    focus : function(e, ui){
+         return false;
+    }
+})
+
+2.@RestController
+-- Spring에서는 비동기, 동기통신 처리 controller 분리 지향
+-- 비동기통신 @ResponseBody 붙이는게 번거롭다
+-- @Controller + @ResponseBody
+
+3. Rest 
+--> 순수하게 데이터만 제공해주는 역할 서버
