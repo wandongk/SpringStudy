@@ -1,0 +1,16 @@
+1. pom.xml
+: 프로젝트 초기 설정(라이브러리 가져오기, spring version 설정, java version 설정 등등)
+2. web.xml
+: 배치기술자(Deployment Descriptor)
+: 건물 안내도면과 같은 역할
+: web.xml안에 기술되어 있는 내용을 기반으로 정의되어있는 객체들을 Spring Container안에 생성 
+2-1) root-context.xml을 읽어서 ContextLoaderListener 만듦
+: root-context.xml의 역할 >> DB 환경설정
+(1) HikariConfig생성(username,password,url,driver)
+(2) HikariDataSource생성(DBCP)
+(3) SqlSessionFactoryBean생성(Connection 빌려오는 친구)
+(4) Mapper파일의 위치 스캔(sql구문 문제가 없나)
+2-2) servlet-context.xml 읽어서 Dispatcher Servlet(FC) 생성
+- @Controller 사용 가능하게 만들기
+- ViewResolver 논리적인주소-> 물리적인 주소로 변환하는 객체
+- Controller의 위치를 스캔 
